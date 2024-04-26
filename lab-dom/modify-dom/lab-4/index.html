@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .red {
+            background-color: red;
+        }
+    </style>
+    <button class="btn1">Style</button>
+    <button class="btn2">Class</button>
+
+    <script>
+        const btn1 = document.querySelector('.btn1')
+        const btn2 = document.querySelector('.btn2')
+
+        setTimeout(() => {
+            btn1.style.backgroundColor = 'red'
+            setTimeout(() => btn1.removeAttribute('style'), 3000)
+        }, 3000)
+
+        setTimeout(() => {
+            btn2.classList.add('red')
+            setTimeout(() => btn2.classList.remove('red'), 3000)
+        }, 3000)
+    </script>
+</body>
+
+</html>

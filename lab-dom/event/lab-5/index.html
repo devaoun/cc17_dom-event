@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input name="nickname" placeholder="input1">
+    <input name="job" placeholder="input2">
+    <script>
+        const input = document.querySelectorAll('input')
+        for(let i of input){
+            i.addEventListener('click', function(event){
+                console.log(event)
+                console.log(event.target.name)
+            })
+            i.addEventListener('input', function(event){
+                console.log(event.target.value)
+            })
+        }
+    </script>
+</body>
+</html>

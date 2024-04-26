@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="province">Province :</label>
+    <select id="pSelect">
+        <option>Select</option>
+    </select>
+    <label for="districk">District :</label>
+    <select id="dSelect">   
+        <option>Select</option>
+    </select>
+
+    <h1 id="show"></h1>
+
+
+    <script>
+        const selectP = document.getElementById('pSelect')
+        const selectD = document.getElementById('dSelect')
+        const show = document.getElementById('show')
+        const dis1 = {
+            Bangkok: ["phayathai", "bangna"],
+            Chonburi: ["bangsan", "samet"]
+        }
+        const province = Object.keys(dis1)
+
+        for (let item of province) {
+            const option = document.createElement('option')
+            option.innerHTML = item
+            selectP.append(option)
+        }
+
+        selectP.addEventListener('change', function (event) {
+            selectD.innerHTML = '<option>Select</option>'
+            show.innerHTML = ''
+            for (let item of dis1[event.target.value]) {
+                const option = document.createElement('option')
+                option.innerHTML = item
+                selectD.append(option)
+            }
+        })
+        selectD.addEventListener('change', function (event) {
+            show.innerHTML = event.target.value
+        })
+
+    </script>
+</body>
+
+</html>

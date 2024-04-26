@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="sub">-</button>
+    <span id="show">0</span>
+    <button id="add">+</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        const sub = document.getElementById('sub')
+        const add = document.getElementById('add')
+        const show = document.getElementById('show')
+        const reset = document.getElementById('reset')
+        let num;
+        sub.addEventListener('click', function () {
+            num = parseInt(show.innerHTML)
+            show.innerHTML = num - 1
+        })
+        add.addEventListener('click', function () {
+            num = parseInt(show.innerHTML)
+            show.innerHTML = num + 1
+        })
+        reset.onclick = () => show.innerHTML = 0
+    </script>
+</body>
+
+</html>

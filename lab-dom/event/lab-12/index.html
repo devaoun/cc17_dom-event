@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .killText {
+            text-decoration: line-through;
+            color: green;
+        }
+    </style>
+
+    <div id="box">
+        <button id="add">Add</button>
+    </div>
+
+    <script>
+        const box = document.getElementById('box')
+        const add = document.getElementById('add')
+
+        let count = 0
+
+        add.addEventListener('click', function () {
+            count++
+            const div = document.createElement('div')
+            const task = document.createElement('span')
+            const edit = document.createElement('button')
+            const del = document.createElement('button')
+
+            task.textContent = `Task ${count}  `;
+            task.style.minWidth = '60px'
+            task.style.textAlign = 'center'
+
+            edit.textContent = 'Edit';
+            del.textContent = 'Delete';
+
+            div.style.display = 'flex'
+            div.style.width = '100vw'
+            div.style.gap = '10px'
+
+            div.append(task);
+            div.append(edit);
+            div.append(del);
+
+            box.append(div);
+
+            edit.addEventListener('click', function () {
+                let input = prompt("Edit to ?")
+                if(input && input.trim().length > 0) task.textContent = input
+            })
+
+            del.onclick = () => div.remove(div)
+
+            task.addEventListener('click', function () {
+                task.classList.toggle('killText')
+            })
+
+        })
+    </script>
+</body>
+
+</html>

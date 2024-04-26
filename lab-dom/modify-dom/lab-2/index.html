@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        
+    </ul>
+    <script>
+        let input;
+        let li;
+        const ul = document.querySelector('ul')
+        do{
+            input = prompt("What u want to add ?")
+            li = document.createElement('li')// <li></li>
+            li.innerHTML = input // <li>input</li>
+            if(input === null)break;
+            ul.append(li)
+        } while (true)
+    </script>
+</body>
+</html>
