@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <a href="">Google</a>
     <script>
         const aTag = document.querySelector('a')
         aTag.addEventListener('click', function () {
-            confirm("Leave for https://google.com?")
-            aTag.setAttribute('href', 'https://google.com')
+            let a = confirm("Leave for https://google.com?")
+            if(a === true) aTag.setAttribute('href', 'https://google.com')
         }
         )
 
